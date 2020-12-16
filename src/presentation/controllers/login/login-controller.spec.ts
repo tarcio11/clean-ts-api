@@ -1,6 +1,6 @@
-import { LoginController } from './login'
+import { LoginController } from './login-controller'
 import { MissingParamError } from '../../errors'
-import { HttpRequest, Authentication } from './login-protocols'
+import { HttpRequest, Authentication } from './login-controller-protocols'
 import { badRequest, ok, serverError, unauthorized } from '../../helpers/http/http-helper'
 import { Validation } from '../../protocols/validation'
 import { AuthenticationModel } from '../../../domain/usecases/authentication'

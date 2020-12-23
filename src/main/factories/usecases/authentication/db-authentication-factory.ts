@@ -3,7 +3,7 @@ import { AccountMongoRepository } from '../../../../infra/db/mongodb/account/acc
 import { BcryptAdapter } from '../../../../infra/criptography/bcrypt-adapter/bcrypt-adapter'
 import { AddAccount } from '../../../../domain/usecases/add-account'
 
-export const makeDbAddAccount = (): AddAccount => {
+export const makeDbAuthentication = (): AddAccount => {
   const salt = 12
   const bcryptAdapter = new BcryptAdapter(salt)
   const accountMongoRepository = new AccountMongoRepository()

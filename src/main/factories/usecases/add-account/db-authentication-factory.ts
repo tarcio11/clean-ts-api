@@ -5,7 +5,7 @@ import { BcryptAdapter } from '../../../../infra/criptography/bcrypt-adapter/bcr
 import { JwtAdapter } from '../../../../infra/criptography/jwt-adapter/jwt-adapter'
 import { Authentication } from '../../../../domain/usecases/authentication'
 
-export const makeDbAuthentication = (): Authentication => {
+export const makeDbAddAccount = (): Authentication => {
   const salt = 12
   const bcryptAdapter = new BcryptAdapter(salt)
   const jwtAdapter = new JwtAdapter(env.jwtSecret)

@@ -1,11 +1,14 @@
-import { DbAddAccount } from '../../../../data/usecases/add-account/db-add-account'
-import { AccountMongoRepository } from '../../../../infra/db/mongodb/account/account-mongo-repository'
-import { BcryptAdapter } from '../../../../infra/criptography/bcrypt-adapter/bcrypt-adapter'
-import { AddAccount } from '../../../../domain/usecases/add-account'
+import env from '@/main/config/env'
+import { JwtAdapter } from '@/infra/criptography/jwt-adapter/jwt-adapter'
+import { BcryptAdapter } from '@/infra/criptography/bcrypt-adapter/bcrypt-adapter'
+import { AccountMongoRepository } from '@/infra/db/mongodb/account/account-mongo-repository'
+import { Authentication } from '@/domain/usecases/authentication'
+import { DbAuthentication } from '@/data/usecases/authentication/db-authentication'
 
-export const makeDbAuthentication = (): AddAccount => {
+export const makeDbAuthentication = (): Authentication => {
   const salt = 12
   const bcryptAdapter = new BcryptAdapter(salt)
+  const jwtAdapter = new JwtAdapter(env.jwtSecret)
   const accountMongoRepository = new AccountMongoRepository()
-  return new DbAddAccount(bcryptAdapter, accountMongoRepository, accountMongoRepository)
+  return new DbAuthentication(accountMongoRepository, bcryptAdapter, jwtAdapter, accountMongoRepository)
 }

@@ -6,6 +6,9 @@ import { forbidden, serverError } from '@/presentation/helpers/http/http-helper'
 const makeFakeRequest = (): HttpRequest => ({
   params: {
     surveyId: 'any_survey_id'
+  },
+  body: {
+    answer: 'any_answer'
   }
 })
 

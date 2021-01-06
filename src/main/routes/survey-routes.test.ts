@@ -45,10 +45,8 @@ describe('Survey Routes', () => {
 
   describe('POST /surveys', () => {
     test('should return 403 on add survey without accessToken', async () => {
-      const accessToken = await makeAccessToken()
       await request(app)
         .post('/api/surveys')
-        .set('x-access-token', accessToken)
         .send({
           question: 'Question',
           answers: [
@@ -61,7 +59,7 @@ describe('Survey Routes', () => {
             }
           ]
         })
-        .expect(204)
+        .expect(403)
     })
 
     test('should return 204 on add survey with valid accessToken', async () => {

@@ -1,8 +1,10 @@
 {
   "name": "CLEAN-NODE-API",
   "version": "2.2.0",
-  "description": "",
+  "description": "NodeJs Rest API using TDD, Architecture and Typescript",
   "main": "index.js",
+  "licenses": "GPL-3.0-or-later",
+  "repository": "github.com/tarcio11/clean-ts-api",
   "scripts": {
     "start": "node dist/main/server.js",
     "build": "rimraf dist && tsc -p tsconfig-build.json",

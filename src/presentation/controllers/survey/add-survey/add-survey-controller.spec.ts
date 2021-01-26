@@ -1,5 +1,5 @@
-import { HttpRequest } from './add-survey-controller-protocols'
 import { AddSurveyController } from './add-survey-controller'
+import { HttpRequest } from '@/presentation/protocols'
 import { badRequest, serverError, noContent } from '@/presentation/helpers/http/http-helper'
 import { ValidationSpy, AddSurveySpy } from '@/presentation/test'
 import { throwError } from '@/domain/test'

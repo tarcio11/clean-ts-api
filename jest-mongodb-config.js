@@ -1,15 +1,15 @@
-/* eslint-disable semi */
-/* eslint-disable quotes */
-/* eslint-disable comma-dangle */
 module.exports = {
+  mongodbMemoryServer: {
+    version: 'latest'
+  },
   mongodbMemoryServerOptions: {
     binary: {
-      version: "4.0.3",
-      skipMD5: true,
+      version: '4.0.3',
+      skipMD5: true
     },
     instance: {
-      dbName: "jest",
+      dbName: 'jest'
     },
-    autoStart: false,
-  },
-};
+    autoStart: false
+  }
+}

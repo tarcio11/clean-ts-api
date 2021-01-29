@@ -37,6 +37,7 @@
     "@types/swagger-ui-express": "^4.1.2",
     "@types/validator": "github:types/validator",
     "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "bson-objectid": "^1.3.1",
     "copyfiles": "^2.4.1",
     "coveralls": "^3.1.0",
     "eslint": "^7.18.0",
